@@ -1,2 +1,3 @@
 api-server/node_modules
+api-server/*.db
 client-server/node_modules

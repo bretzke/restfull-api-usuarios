@@ -27,7 +27,7 @@ module.exports = (app) => {
     //insere um usuário novo
     route.post((req, res) => {
 
-        if(app.utils.validator.user(app, req, res)) return false;
+        if(!app.utils.validator.user(app, req, res)) return false;
 
         db.insert(req.body, (err, user) => {
             if(err) {
@@ -53,7 +53,7 @@ module.exports = (app) => {
 
     //atualiza um usuário
     routeId.put((req, res) => {
-        if(app.utils.validator.user(app, req, res)) return false;
+        if(!app.utils.validator.user(app, req, res)) return false;
         
         db.update({_id: req.params.id}, req.body, err => {
             if(err) {
