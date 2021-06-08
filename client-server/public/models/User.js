@@ -70,7 +70,7 @@ class User {
     }
 
     static getUsers() {
-        return HttpRequest.get('/users');
+        return Fetch.get('/users');
     }
 
     toJSON() {
@@ -96,7 +96,6 @@ class User {
 
             promise.then(data => {
                 this.loadFromJSON(data);
-                console.log("THIS",this)
                 resolve(this);
             }).catch(e => {
                 reject(e);

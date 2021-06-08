@@ -44,12 +44,8 @@ router.delete('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  console.log(req)
-  console.log(res)
-  console.log(next)
   client.post(`/users`, req.body, function(err, request, response, obj) {
     assert.ifError(err);
-    console.log("OBJ",obj)
     res.json(obj)
   });
 });

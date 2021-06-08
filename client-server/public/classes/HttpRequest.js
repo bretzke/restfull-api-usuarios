@@ -28,15 +28,13 @@ class HttpRequest {
                 try {
                     obj = JSON.parse(ajax.responseText);
                 } catch(e) {
-                    console.log(e)
                     reject(e);
                 }
-                console.log("OBJ",obj)
                 resolve(obj)
             }
 
             ajax.setRequestHeader('Content-Type', 'application/json');
-            console.log("PARAMS = ",params)
+
             //chama o ajax
             ajax.send(JSON.stringify(params));
         })
