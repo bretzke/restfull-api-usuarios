@@ -5,7 +5,6 @@ let db = new NeDB({
 })
 
 module.exports = (app) => {
-    let initial_path = '/users';
     let route = app.route('/users');
 
     //traz todos os usuários
